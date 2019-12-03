@@ -1,0 +1,4 @@
+      A: VERY FINE TO FINE                                      
+      B: FINE TO MEDIUM (EFED DEFAULT)                          
+      C: MEDIUM TO COARSE                                       
+      D: COARSE TO VERY COARSE

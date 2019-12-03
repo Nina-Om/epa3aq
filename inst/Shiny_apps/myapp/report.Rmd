@@ -1,0 +1,30 @@
+---
+title: "SCI-GROW"
+header-includes: \usepackage{caption}
+output:
+  pdf_document:
+    highlight: tango
+    df_print: kable
+---
+
+```{r 'setup', echo = FALSE, cache = FALSE}
+library(data.table)
+library(knitr) # for kable
+library(plotly)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE,
+                      dev = c('pdf', 'png'), 
+                      fig.align = 'center',
+                      pdf.options(encoding = "ISOLatin9.enc"))
+```
+
+\captionsetup[table]{labelformat=empty}
+
+```{r table1, echo=FALSE, results='asis', tab.cap=NULL}
+data <- res.s()
+knitr::kable(data, caption = "Table 1. Groundwater concentration (unit: PPM)")
+```
+
+#
+```{r fig1, echo=FALSE, out.width="600px", out.height="400px", message=FALSE, warning=FALSE}
+plot.s1()
+``` 

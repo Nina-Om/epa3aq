@@ -1,0 +1,31 @@
+---
+title: "GENEEC"
+header-includes: \usepackage{caption}
+geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"
+output:
+  pdf_document: 
+    highlight: tango
+    df_print: kable
+---
+
+```{r 'setup', echo = FALSE, cache = FALSE}
+library(data.table)
+library(knitr) # for kable
+library(plotly)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE,
+                      dev = c('pdf', 'png'), 
+                      fig.align = 'center',
+                      pdf.options(encoding = "ISOLatin9.enc"))
+```
+
+\captionsetup[table]{labelformat=empty}
+
+```{r table1, echo=FALSE, results='asis', tab.cap=NULL}
+data <- res.g()
+knitr::kable(data, caption = "Table 1. Acute and chronic generic expected environmental concentration values")
+```
+
+#
+```{r fig1, echo=FALSE, message=FALSE, warning=FALSE,  out.width="600px", out.height="400px"}
+plot.g1()
+``` 

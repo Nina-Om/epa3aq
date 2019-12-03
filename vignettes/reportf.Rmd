@@ -1,0 +1,31 @@
+---
+title: "FIRST"
+header-includes: \usepackage{caption}
+geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"
+output:
+  pdf_document:
+    highlight: tango
+    df_print: kable
+---
+
+```{r 'setup', echo = FALSE, cache = FALSE}
+library(data.table)
+library(knitr) # for kable
+library(plotly)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE,
+                      dev = c('pdf', 'png'), 
+                      fig.align = 'center',
+                      pdf.options(encoding = "ISOLatin9.enc"))
+```
+
+\captionsetup[table]{labelformat=empty}
+
+```{r table2, echo=FALSE, results='asis', tab.cap=NULL}
+data <- res.f()
+knitr::kable(data, caption = "Table 1. FIRST estimates peak values (acute) and long-term (chronic) average concentrations of pesticides in drinking water")
+```
+
+#
+```{r fig2, echo=FALSE, out.width="600px", out.height="400px", message=FALSE, warning=FALSE}
+plot.f1()
+``` 
